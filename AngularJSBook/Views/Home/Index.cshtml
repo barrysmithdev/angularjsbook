@@ -1,0 +1,23 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+    Layout = null;
+}
+<html ng-app="app">
+<head>
+    <link href="~/Content/Site.css" rel="stylesheet" />
+    <title></title>
+    <script src="~/Scripts/angular.js"></script>
+    <script src="~/Scripts/angular-route.js"></script>
+
+    <script src="~/Scripts/app/app.js"></script>
+    <script src="~/Scripts/app/controller.js"></script>
+    <script src="~/Scripts/app/directives.js"></script>
+    <script src="~/Scripts/app/services.js"></script>
+</head>
+    <body>
+        <div ng-include="'app/shared/header.html'"></div>
+        <div ng-include="'app/shared/navbar.html'"></div>
+        <div ng-view>
+        </div>
+    </body>
+</html>

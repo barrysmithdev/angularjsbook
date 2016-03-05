@@ -1,0 +1,20 @@
+﻿
+<div>
+    <nav class="{{active}}" >
+
+        <!-- When a link in the menu is clicked, we set the active variable ng-click="$event.preventDefault() -->
+        <a href="#/" class="home" ng-click="active='home'">Home</a>
+        <a href="#/viewbooks" class="viewbooks" ng-click="active='viewbooks'">View Books</a>
+        <a href="#/addbook" class="addbook" ng-click="active='addbook'">Add Book</a>
+        <a href="#/viewauthors" class="viewauthors" ng-click="active='viewauthors'">View Authors</a>
+        <a href="#/addauthor" class="addauthor" ng-click="active='addbook'">Add Author</a>
+        <!--<a href="#" class="contact" ng-click="active='contact'"></a>-->
+    </nav>
+
+    <!-- ng-show will show an element if the value in the quotes is truthful,
+         while ng-hide does the opposite. Because the active variable is not set
+         initially, this will cause the first paragraph to be visible. -->
+
+    <p ng-hide="active">Please click a menu item</p>
+    <p ng-show="active">You chose <b>{{active}}</b></p>
+</div>

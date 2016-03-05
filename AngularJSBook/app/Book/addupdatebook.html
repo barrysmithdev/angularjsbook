@@ -1,0 +1,52 @@
+﻿<div>
+    <form class="form-horizontal" name="vm.addBookForm" novalidate role="form">
+
+        <fieldset>
+            <legend>Add Book</legend>
+
+            <div class="form-group">
+                <label for="title" class="col-sm-3 control-label">Title</label>
+                <div class="col-sm-9">
+                    <input type="text" id="title" name="title" class="form-control" ng-model="vm.editableBook.title" ng-required="true" />
+                    <span class="help-block" ng-show="vm.addBookForm.title.$error.required  && vm.addBookForm.title.$dirty">Title is required</span>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="description" class="col-sm-3 control-label">Description</label>
+                <div class="col-sm-9">
+                    <input type="text" id="description" name="description" class="form-control" ng-model="vm.editableBook.description" ng-required="true" />
+                    <span class="help-block" ng-show="vm.addBookForm.description.$error.required  && vm.addBookForm.description.$dirty">Description is required</span>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="isbn" class="col-sm-3 control-label">Isbn</label>
+                <div class="col-sm-9">
+                    <input type="text" id="isbn" name="isbn" class="form-control" ng-model="vm.editableBook.isbn" ng-required="true" />
+                    <span class="help-block" ng-show="vm.addBookForm.isbn.$error.required  && vm.addBookForm.isbn.$dirty">Isbn is required</span>
+                </div>
+            </div>
+
+
+            <div class="form-group">
+                <label for="author" class="col-sm-3 control-label">Author</label>
+                <div class="col-sm-9">
+
+                    <select id="author" name="author" class="form-control " ng-model="vm.editableBook.author" ng-options="author.fullName for author in vm.authors" ng-required="true">
+                        <option value="">-- choose author --</option>
+                    </select><br>
+                    <span class="help-block" ng-show="vm.addBookForm.author.$error.required  && vm.addBookForm.author.$dirty">Author is required</span>
+                </div>
+            </div>
+        </fieldset>
+        <div class="col-sm-offset-3 col-sm-9">
+            <input type="button" class="btn btn-default" value="Cancel" ng-click="vm.cancelForm()" />
+            <input type="button" class="btn btn-primary" value="Submit" ng-click="vm.submitForm()" />
+        </div>
+    </form>
+</div>
+    <!--public int Id { get; set; }
+    public int Name { get; set; }
+    public int Description { get; set; }
+    public Author Author { get; set; }-->

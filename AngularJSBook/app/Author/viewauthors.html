@@ -1,0 +1,21 @@
+﻿<div>
+    <form class="form-inline">
+        <input ng-model="query" type="text" placeholder="Filter by" autofocus>
+    </form>
+    <table>
+        <tr>
+            <th>Id</th>
+            <th>First Name</th>
+            <th>Last Name</th>
+        </tr>
+        <tr ng-repeat="author in vm.authors | filter:query  | orderBy: '-title'">
+            <td>
+                <a title="Click to view" href="">{{author.Id}}</a>
+            </td>
+            <td> {{author.FirstName}}</td>
+            <td>{{author.LastName}}</td>
+        </tr>
+    </table>
+    <p ng-show="(vm.authors | filter:query).length==0">Sorry No Result Found</p>`
+
+</div>

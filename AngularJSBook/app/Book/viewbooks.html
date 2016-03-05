@@ -1,0 +1,29 @@
+﻿<div>
+    <form class="form-inline">
+        <input ng-model="query" type="text" placeholder="Filter by" autofocus>
+        <input type="checkbox" ng-model="vm.showUnPublished" ng-change="vm.filterPublished()" />Show UnPublished?
+    </form>
+    <button ng-click="vm.handleEmitEvent()">handle Emit Event</button>
+    <table>
+        <tr>
+            <th>Isbn</th>
+            <th>Title</th>
+            <th>Author</th>
+            <th>Published Date</th>
+            <th>Is Published</th>
+        </tr>
+        <tr ng-repeat="book in vm.books | filter:query  | orderBy: '-title'">
+            <td>
+                <a title="Click to view" href="">{{book.isbn}}</a>
+            </td>
+            <td>{{book.title}}</td>
+            <td>{{book.author}}</td>
+            <td>{{book.publishDate}}</td>
+            <td>{{book.isPublished}}</td>
+        </tr>
+
+    </table>
+    <p ng-show="(vm.books | filter:query).length==0">Sorry No Result Found</p>`
+
+
+</div>
